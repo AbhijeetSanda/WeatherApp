@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #090b10;
+    --surface: #11151d;
+    --border: #252b36;
+    --text: #e8edf5;
+    --muted: #858d9c;
+    --accent: #a3e635;
+}
+
+body {
+    min-height: 100vh;
+    padding: 24px;
+    display: grid;
+    place-items: center;
+    font-family: 'Inter', sans-serif;
+    background:
+        radial-gradient(ellipse at 50% 0%, #1b2635 0%, transparent 55%),
+        var(--bg);
+    color: var(--text);
+}
+
+.container {
+    width: 100%;
+    max-width: 380px;
+    padding: 36px 28px;
+    background: rgba(17, 21, 29, 0.92);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    margin-bottom: 8px;
+    font-size: 27px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 3px;
+    margin-top: 14px;
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+.input-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 28px;
+}
+
+input[type="text"] {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 14px;
+    background: #0b0e14;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font: inherit;
+    font-size: 13px;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]::placeholder {
+    color: #626b7a;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+button {
+    flex-shrink: 0;
+    padding: 0 18px;
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    background: var(--accent);
+    color: #151b0b;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: #bef264;
+    border-color: #bef264;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+#weather-info {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    line-height: 1.9;
+    color: #c3cad5;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#error-message {
+    margin-top: 18px;
+    color: #fb7185;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media (max-width: 420px) {
+    .container {
+        padding: 28px 20px;
+        border-radius: 16px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        padding: 0 14px;
+    }
+}
+
